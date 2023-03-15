@@ -1,2 +1,2 @@
 # notify
-a website which kils the friction of getting study material during crucial times.
+a website which kills the friction of getting study material during crucial times.
