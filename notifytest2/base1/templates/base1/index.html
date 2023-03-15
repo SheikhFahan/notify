@@ -1,0 +1,31 @@
+{%extends 'base1/main.html'%}
+{%load static%}
+
+
+{% block content%}
+<link rel="stylesheet" href="{%static 'css/hero.css'%}">
+
+<div class="hero">
+    <div class="left-hero">
+        <img src="{%static 'images/tag-line.png'%}" alt="">
+        <button id = "hero-button">Explore</button>
+
+    </div>
+    <div class="right-hero">
+        <img  id="hero-search-logo" src="{% static 'images/search-logo.png' %}" alt="">
+        <input type="text"  id="hero-search" placeholder="Subject Code" onkeydown="keydown(event)">
+        <hr id="search-hr">
+
+        <img src="{% static 'images/gux+cat.png' %}" alt="">
+    </div>
+</div>
+<script>
+    function keydown(event) {
+      console.log(event.keyCode, event.target.value.toUpperCase());
+      if(event.keyCode == 13)
+    //   13 is the event for enter
+        window.location.replace(`/resc/${event.target.value.toUpperCase()}`)
+    }
+ </script>
+
+{%endblock %}

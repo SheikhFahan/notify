@@ -1,0 +1,43 @@
+{%extends 'base1/main.html'%}
+{% load static %}
+{% block content%}
+<link rel="stylesheet" href="{% static 'css/resources.css'%}">
+
+
+<div class="div-resources-main">
+    <div class="div-content">
+        <li>
+            <ul>
+                <a href="{%url 'viewNotes'%}">View Notes</a>
+            </ul>
+            <ul>
+                <a href="{%url 'viewAssignments'%}">View Assignments</a>
+            </ul>
+            <ul>
+                <a href="{%url 'viewQuestions'%}">View Questions</a>
+            </ul>
+
+        </li>
+    </div>
+
+{% if request.user.is_authenticated %}
+<div class="div-content">
+    <li>
+        <ul>
+            <a href="{% url 'noteUpload'%}">upload notes</a><br>
+        </ul>
+        <ul>
+            <a href="{% url 'assignmentUpload'%}"> upload assignments</a><br>
+        </ul>
+        <ul>
+            <a href="{% url 'questionPaperUpload'%}"> upload question paper</a><br>
+        </ul>
+
+    </li>
+</div>
+
+</div>
+{%endif%}
+
+
+{%endblock %}

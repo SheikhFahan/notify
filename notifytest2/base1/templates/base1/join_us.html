@@ -1,0 +1,79 @@
+{%extends 'base1/main.html'%}
+{% load static %}
+{% block content%}
+<style>
+
+
+.about-section{
+    padding: 100px ;
+    margin-left: 50px;
+    
+    background: url("{% static 'images/contact-us-image.jpg'%}") no-repeat left;
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+}
+
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+
+.inner-container h1{
+    color: #5769A9 ;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 19px;
+    color: #5769A9 ;
+    font-family: 'Inter', sans-serif;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+}
+</style>
+
+<div class="about-section">
+    <div class="inner-container">
+        <h1>About Us</h1>
+        <p class="text">
+            "Welcome to our academic resources website, where knowledge is just a click away. Our goal is to provide students with information they need to excel in their field. With a vast collection of study material, our website is a one-stop-shop for all your academic needs. No need to look any further for your resources we have you covered. Dive in and discover all of it for Free."
+
+        </p>
+
+    </div>
+</div>
+
+{%endblock %}

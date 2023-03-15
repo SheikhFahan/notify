@@ -1,0 +1,15 @@
+{%extends 'base1/main.html'%}
+{% block content%}
+<form method="get">
+    {{my_filter.form}}
+<input type="submit" value="submit" name="submit">
+
+
+</form>
+{% for pdf in pdfs%}
+{{pdf}}
+{{pdf.id}}
+<a href="{{pdf.pdf.url}}" download>link</a><br><a href="{%url 'noteDelete' pdf.id%}">delete pdf</a>
+{%endfor%}
+
+{%endblock %}

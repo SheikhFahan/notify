@@ -1,0 +1,58 @@
+{%extends 'base1/main.html'%}
+{% block content%}
+<style>
+    .model-text , #id_sub_code, .model-select, .model-number, .model-file, .model-dateTime {
+        font-family: 'Inter' ,sans-serif;
+        text-decoration: none;
+        font-size: 20px;
+
+    }
+
+    .model-submit {
+        font-family: 'Inter' ,sans-serif;
+        text-decoration: none;
+        font-size: 20px;
+        float: right;
+        margin: 18px;
+    }
+    
+
+    .field-name { 
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+
+    }
+    .note-form {
+        display: flex;
+        padding: 10vh;
+}
+
+.innp {
+  font-size: large;
+}
+
+
+</style>
+
+<div class="note-form">
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+    <table>
+        {% for field in form %}
+        <tr>
+            <td class="innp">
+                <label for="{{field.label}}" class = 'field-name'>{{field.label}}</label>
+            </td>
+
+            <td>{{field}}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="submit" name="submit" class="model-submit">
+
+    </form>
+</div>
+{%endblock  %}

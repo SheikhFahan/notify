@@ -1,0 +1,14 @@
+{%extends 'base1/main.html'%}
+{% block content%}
+
+<form action="" method = 'POST'>
+    {%csrf_token%}
+    <h3>
+        Are you sure you want to delete {{pdf.name}}
+        <input type="submit" value="submit" name="submit">
+
+
+    </h3>
+</form>
+
+{%endblock %}

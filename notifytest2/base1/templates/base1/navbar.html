@@ -1,0 +1,52 @@
+<!-- {% load static%} -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+<nav>
+    <div class="logo">
+        <h4  style="font-size:50px" >Notify</h4>
+    </div>
+    
+    <ul class="nav-links">
+        <li>
+            <a href="{%url 'index'%}">Home</a>
+        </li>
+        <li>
+            <a href="{%url 'resources'%}">Resources</a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li>
+            <a href="{%url 'profileView'%}">Profile </a>
+        </li>
+        {%endif%}
+        {% if not request.user.is_authenticated %}
+        <li>
+            <a href="{%url 'login'%}">Login</a>
+        </li>
+        {% endif%}
+        {% if request.user.is_staff %}
+
+        <li>
+            <a href="{%url 'register'%}">Register</a>
+        </li>
+        {% endif%}
+        <li>
+            <a href="{%url 'joinUs' %}">About Us  {{request.user.professor}}</a>
+        </li>
+        {% if request.user.is_authenticated%}
+        <li>
+            <a href="{%url 'logout' %}">logout</a>
+        </li>
+        {%endif%}
+
+        
+    </ul>
+
+
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>   
+    </div>
+</nav>
+<script src="{% static 'js/navbar.js'%}"></script>
+
