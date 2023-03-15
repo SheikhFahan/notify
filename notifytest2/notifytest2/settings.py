@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     'base1',
     'django_filters',   
-    'django_plpy',
+    #'django_plpy',
     # 'searchableselect'
 ]
 
@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'notifytest2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DB_NOTIFY',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD' : 'Fahanfarooq1.',
-        'HOST' : 'localhost',
-        'PORT' : '5432'
+        'PASSWORD' : 'eIl1REz6IhqYOjHiH7FR',
+        'HOST' : 'containers-us-west-202.railway.app',
+        'PORT' : '6036'
     }
 }
 
