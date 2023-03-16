@@ -4,6 +4,7 @@ Django==4.1.4
 django-filter==22.1
 django-plpy==0.1.0
 django-searchable-select==1.5.0
+gunicorn==20.1.0
 lxml==4.9.1
 numpy==1.23.3
 pandas==1.5.0
