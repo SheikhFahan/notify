@@ -1,6 +1,5 @@
 asgiref==3.6.0
 beautifulsoup4==4.11.1
-certifi @ file:///croot/certifi_1671487769961/work/certifi
 Django==4.1.4
 django-filter==22.1
 django-plpy==0.1.0
