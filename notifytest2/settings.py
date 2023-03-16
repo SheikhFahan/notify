@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ag-iz@j-m$$o#*m12ag^(wyuzl%b2=(@^%ewea7i%94b#(mc=w
 DEBUG = True
 
 ALLOWED_HOSTS = ['notify-production.up.railway.app', '127.0.0.1']
-CSRF_TRUSTED_ORIGINS = ['https://notify-production.up.railway.app','http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://notify-production.up.railway.app','http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -133,9 +133,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = 'staticfiles/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
