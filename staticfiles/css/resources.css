@@ -1,0 +1,32 @@
+
+.div-resources-main { 
+    display: flex;
+    justify-content: center;
+}
+
+/* .div-content {
+    font-size: 50px;
+    } */
+
+.div-content>li>ul>a {
+    margin-top: 60px;
+    font-size: 3vh;
+    color: white;
+    text-decoration: none;
+}
+
+.div-content>li>ul {
+    display: flex;
+
+    text-align:center;
+    justify-content: center;
+    background-color: rgb(132, 132, 179);
+    height: 30vh;
+    width:40vh;
+    margin: 50px;
+
+    /* margin: 10; */
+}
+/* .div-content>li>{
+    justify-content: center;    
+} */
