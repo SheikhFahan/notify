@@ -18,4 +18,3 @@ soupsieve==2.3.2.post1
 sqlparse==0.4.3
 tabula-py==2.5.1
 whitenoise==6.4.0
-

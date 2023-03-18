@@ -30,13 +30,17 @@
         </li>
         {% endif%}
         <li>
-            <a href="{%url 'joinUs' %}">About Us  {{request.user.professor}}</a>
+            <a href="{%url 'joinUs' %}">About Us  </a>
         </li>
         {% if request.user.is_authenticated%}
         <li>
             <a href="{%url 'logout' %}">logout</a>
         </li>
         {%endif%}
+        
+        <li>
+            <a href="#">{{request.user.professor}}</a>
+        </li>
 
         
     </ul>
