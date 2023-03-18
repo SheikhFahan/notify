@@ -1,6 +1,7 @@
 {%extends 'base1/main.html'%}
+{% load  static %}
 {% block content%}
-{% load static %}
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;900&display=swap');
 *{
@@ -12,6 +13,26 @@
 
 body{
 	background: #eeeff4;
+}
+.filter_label {
+		font-family: 'Inter' ,sans-serif;
+        text-decoration: none;
+        font-size: 30px;
+		margin-right: 10px;
+}
+form {
+	padding:7vh;
+}
+
+.submit {
+		margin-top: 10px;
+        font-family: 'Inter' ,sans-serif;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+input {
+	
 }
 
 .wrapper .header{
@@ -108,7 +129,7 @@ body{
 	}
 }
 
-a{
+.card_item-a{
     /* text-decoration: none; */
     color: #b6c0c2;
 	font-size: 15px;
@@ -120,12 +141,30 @@ h2 {
     margin-left: 5vh;
 }
 </style>
-
 <form method="get">
-    {{my_filter.form}}
-<input type="submit" value="submit" name="submit">
+	<table>
+	{% for filter in my_filter.form%}
+
+	<tr>
+		<td>
+			<label for="{{filter.label}}" class = 'filter_label'>{{filter.label}}</label>
+		</td>
+
+		<td>{{filter}}</td>
+		
+	</tr>
+	{%endfor%}
+	</table>
+
+<input type="submit" value="submit" name="submit" class="submit">
+
+
 </form>
+
 <div class="cards_wrap">
+	{%if pdf != None %}
+    <h2 >Question papers for {{sub_code}}</h2>
+	{% endif%}
     {% for pdf in pdfs%}
     <div class="card_item">
         <div class="card_inner">
