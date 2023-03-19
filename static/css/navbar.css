@@ -13,7 +13,7 @@ nav{
     min-height: 8vh;
     background-color: #F4F4F4;
     font-family: 'Inter', sans-serif;
-    padding-top: 20px;
+    padding-top: 3vh;
 }
 .logo {
     color:#5770cb;
@@ -27,19 +27,19 @@ nav{
     width:  auto;
     list-style: none ;
     
+    
 }
 
 
 .nav-links li {
     justify-content: space-around;
-    margin: 10px;
+    margin: 30px;
 }
 
 .nav-links a {
     color: #5769A9 ;
     text-decoration: none;
     letter-spacing: 2px;
-    font-weight: bold;
     font-size: 28px;
 }
 

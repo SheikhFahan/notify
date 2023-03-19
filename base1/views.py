@@ -18,8 +18,8 @@ def indexPage(request):
     # context = {'form' : form}
     return render(request, 'base1/index.html')
 
-def joinUs(request):
-    return render(request, 'base1/join_us.html')
+def aboutUs(request):
+    return render(request, 'base1/about_us.html')
 
 @unauthenticated_user
 def loginPage(request):

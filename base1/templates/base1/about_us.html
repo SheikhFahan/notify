@@ -1,0 +1,81 @@
+{%extends 'base1/main.html'%}
+{% load static %}
+{% block content%}
+<style>
+
+
+.about-section{
+    padding: 100px ;
+    margin-left: 50px;
+    
+    background: url("{% static 'images/contact-us-image.jpg'%}") no-repeat left;
+    background-size: 55%;
+    overflow: hidden;
+}
+
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: #efefef;
+    padding: 150px;
+}
+
+.inner-container h1{
+    color: #5769A9 ;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.text{
+    font-size: 19px;
+    color: #5769A9 ;
+    font-family: 'Inter', sans-serif;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+
+@media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+}
+</style>
+
+<div class="about-section">
+    <div class="inner-container">
+        <h1>About Us</h1>
+        <p class="text">
+            "Welcome to <strong>Notify</strong>"    <br>Notify in a simple webapp that aims to make the task of posting and retreiving
+            documents (primarily study materials) as swift as possible. Notify also provides usefull details about the posted documents
+            the can be very usefull in  the apprehension of those documents. Presently Notify's interface is in beta mode and is 
+            designed only for desktops though it can be used on any web enabled device, we aim to push a design update for mobile devices 
+            in the upcoming release" <br><bold><italic>for colabs contact "business.fahan@gmail.com"</italic></bold>.
+        </p>
+
+    </div>
+</div>
+
+{%endblock %}

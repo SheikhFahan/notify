@@ -10,11 +10,9 @@
 	font-family: 'Noto Sans JP', sans-serif;
 }
 
-body{
-	background: #eeeff4;
-}
 
 .wrapper .header{
+	margin-top: 2vh;
 	width: 100%;
 	height: 50px;
 	background: #e36686;
@@ -71,16 +69,16 @@ body{
 
 .cards_wrap .card_item .real_name{
 
-	color: #b6c0c2 !important;
-	font-size: 12px;
-	font-weight: 100;
+	color: #3f4343 !important;
+	font-size: 15px;
+	font-weight:400;
 	margin: 5px 0 10px;
 }
 
 .cards_wrap .card_item .film{
 	font-size: 14px;
 	line-height: 24px;
-	color: #7b8ca0;
+	color: #545a61;
 }
 
 @media screen and (max-width: 1024px){
@@ -122,7 +120,7 @@ h2 {
 </style>
 
 <div class="wrapper">
-    <h2 >Notes papers for {{sub_code}}</h2>
+    <h2 >Notes for: {{sub_code}}</h2>
 	<div class="cards_wrap">
         {% for note in notes%}
 		<div class="card_item">
@@ -146,7 +144,7 @@ h2 {
 	</div>
 
 
-    <h2>Assignments for {{sub_code}}</h2>
+    <h2>Assignments for: {{sub_code}}</h2>
 
     <div class="cards_wrap">
         {% for assignment in assignments%}
@@ -169,7 +167,7 @@ h2 {
 
 	</div>
 
-    <h2>Question papers for {{sub_code}}</h2>
+    <h2>Question papers for: {{sub_code}}</h2>
 
 
     <div class="cards_wrap">
