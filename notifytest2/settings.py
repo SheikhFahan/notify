@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ag-iz@j-m$$o#*m12ag^(wyuzl%b2=(@^%ewea7i%94b#(mc=w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['notify-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://notify-production.up.railway.app','http://127.0.0.1:8000/']

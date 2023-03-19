@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Professor, Note, Assignment, QuestionPaper
 from .filters import NotesFilter, AssignmentFilter, QuestionPaperFilter
 from .decorators import unauthenticated_user , allowed_users
+from django.contrib import messages
+
 # used to restict access to pages 
 
 # Create your views here.
@@ -35,8 +37,7 @@ def loginPage(request):
             # if user is there
             login(request, user)
             return redirect('/')
-        # else: 
-        #     return redirect('register')
+        messages.error(request, "invalid username or password")
     return render(request, 'base1/login.html')
 @login_required(login_url = 'login')
 def logoutPage(request):
