@@ -13,8 +13,7 @@ nav{
     min-height: 8vh;
     background-color: #F4F4F4;
     font-family: 'Inter', sans-serif;
-    height: 12vh;
-    margin-top: 20px
+    padding-top: 3vh;
 }
 .logo {
     color:#5770cb;
@@ -25,27 +24,22 @@ nav{
 
 .nav-links {
     display: flex;
-    /* background-color: red; */
-    justify-content: space-around;
-    width:  40%;
+    width:  auto;
+    list-style: none ;
     
     
 }
 
-.nav-links {
-    list-style: none ;
-}
 
 .nav-links li {
-    padding: 0%;
-    margin: 0%;
+    justify-content: space-around;
+    margin: 30px;
 }
 
 .nav-links a {
     color: #5769A9 ;
     text-decoration: none;
     letter-spacing: 2px;
-    font-weight: bold;
     font-size: 28px;
 }
 
