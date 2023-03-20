@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ag-iz@j-m$$o#*m12ag^(wyuzl%b2=(@^%ewea7i%94b#(mc=w'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ag-iz@j-m$$o#*m12ag^(wyuzl%b2=(@^%ewea7i%94b#(mc=w')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = str(os.environ.get('DEBUG')) == '1'
 
 ALLOWED_HOSTS = ['notify-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://notify-production.up.railway.app','http://127.0.0.1:8000/']
@@ -92,9 +92,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD' : 'eIl1REz6IhqYOjHiH7FR',
-        'HOST' : 'containers-us-west-202.railway.app',
-        'PORT' : '6036'
+        'PASSWORD' : os.environ.get('PASSWD'),
+        'HOST' : os.environ.get('HOST'),
+        'PORT' : os.environ.get('PORT')
     }
 }
 
