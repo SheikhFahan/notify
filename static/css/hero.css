@@ -8,7 +8,11 @@
 
 
 }
-
+/* @media screen and (max-width: 500px) {
+    .left-hero {
+      display: none;
+    }
+  } */
 .left-hero {
     height: 356px;
     width: 822px;
