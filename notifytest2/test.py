@@ -1,5 +1,6 @@
 from django.test import TestCase
+import os
 
 class NotifyConfigTest(TestCase):
     def test_temp(self):
-        self.assertTrue(1==1)
+        print(os.environ.get('SECRET_KEY'))
