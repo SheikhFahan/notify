@@ -80,23 +80,23 @@ WSGI_APPLICATION = 'notifytest2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD' : os.environ.get('PASSWD'),
-        'HOST' : os.environ.get('HOST'),
-        'PORT' : os.environ.get('PORT')
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD' : os.environ.get('PASSWD'),
+#         'HOST' : os.environ.get('HOST'),
+#         'PORT' : os.environ.get('PORT')
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -138,9 +138,9 @@ STATIC_URL = 'static/'
     # os.path.join(BASE_DIR, 'static'),
 # ]
 if DEBUG:
-  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 else:
-  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
 
