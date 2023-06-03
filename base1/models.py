@@ -61,6 +61,7 @@ class Assignment(models.Model):
 
     # last date of submission 
 
+
     def __str__(self):
         return self.name
     
@@ -74,6 +75,9 @@ class Note(models.Model):
     # says when should this be studied ideally
     upload_date = models.DateField(null = True, blank = True,  auto_now=False, auto_now_add=True)
     note = models.FileField(null = True, upload_to='pdf/notes/', max_length=100, verbose_name = 'Pdf')
+
+    def prof_name(self):
+        return str(self.prof)
 
     def __str__(self):
         return self.name

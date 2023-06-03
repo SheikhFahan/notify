@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # urls('^searchableselect/', include('searchableselect.urls')),
     # this method is depricated in django 4
-    path("", include('base1.urls'))
+    path("", include('base1.urls')),
+    path("api/", include('api.urls')),
 
 
 ]

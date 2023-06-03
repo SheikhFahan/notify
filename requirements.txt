@@ -1,6 +1,6 @@
 asgiref==3.6.0
 beautifulsoup4==4.11.1
-Django==4.1.4
+django>=4.0.0,<4.1.0
 django-dotenv==1.4.2
 django-filter==22.1
 django-plpy==0.1.0
@@ -19,3 +19,8 @@ soupsieve==2.3.2.post1
 sqlparse==0.4.3
 tabula-py==2.5.1
 whitenoise==6.4.0
+djangorestframework
+djangorestframework-simplejwt
+pyyaml
+requests
+django-cors-headers

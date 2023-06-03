@@ -40,7 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # internal apps
     'base1',
+    'api',
+    'pdfs_library',
+
+    # third party packages
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt',
+
+    # third party services
     'django_filters',   
     #'django_plpy',
     # 'searchableselect'
@@ -86,6 +96,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # DATABASES = {
 #     'default': {

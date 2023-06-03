@@ -39,6 +39,7 @@ def loginPage(request):
             return redirect('/')
         messages.error(request, "invalid username or password")
     return render(request, 'base1/login.html')
+    
 @login_required(login_url = 'login')
 def logoutPage(request):
     logout(request)
@@ -50,10 +51,9 @@ def registerPage(request):
     if request.method == 'POST':
         form  = CreateUserForm(request.POST)
         if form.is_valid():
-            user = form.save()
             group = Group.objects.get(name = 'professors')
-            user.groups.add(group
-            )
+            user = form.save()
+            user.groups.add(group)
             print(form.errors)
             return redirect('login')
 
@@ -97,8 +97,8 @@ def uploadNote(request):
         # the above line was useless
         if form.is_valid():
             if (form.cleaned_data['prof'] != request.user.professor):
-                 form.add_error('prof', 'You cannot change this value.')
-                 print("don't edit via inspect mode")
+                form.add_error('prof', 'You cannot change this value.')
+                print("don't edit via inspect mode")
             else:
               #  form.cleaned_data['prof'] = request.user.professor
                 form.save()
