@@ -1,17 +1,34 @@
-from django.shortcuts import render , redirect
 from .forms import CreateUserForm, ProfessorProfileForm, NotesForm, AssignmentForm, QuestionPaperForm
+from .models import Professor, Note, Assignment, QuestionPaper
+from .filters import NotesFilter, AssignmentFilter, QuestionPaperFilter
+from .serializers import NoteSerializer
+
+from django.shortcuts import render , redirect
 from django.contrib.auth import authenticate, logout , login
 from django.contrib.auth.models import Group
 from django.contrib.auth.decorators import login_required
-from .models import Professor, Note, Assignment, QuestionPaper
-from .filters import NotesFilter, AssignmentFilter, QuestionPaperFilter
-from .decorators import unauthenticated_user , allowed_users
 from django.contrib import messages
+
+from .decorators import unauthenticated_user , allowed_users
+
+from rest_framework import generics
+
 
 # used to restict access to pages 
 
 # Create your views here.
 
+class NoteDetailAPIView(generics.RetrieveAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
+    # lookup_field
+
+class NoteCreateAPIView(generics.CreateAPIView):
+    queryset = Note.objects.all()
+    serializer_class = NoteSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(prof = self.request.user)
 
 def indexPage(request):
     # form = SubCodeForm()
@@ -186,21 +203,21 @@ def deleteNote(request, pk):
     return render(request , 'base1/delete.html', context)
 
 def deleteAssignment(request, pk):
-    pdfs = Assignment.objects.all()
+    pdf = Assignment.objects.get(id = pk)
     if request.method  == 'POST':
         pdf.delete()
         print("delete successful")
         return redirect('viewAssignments')
-    context = {'pdfs' : pdfs}
+    context = {'pdf' : pdf}
     return render(request , 'base1/delete.html', context)
 
 def deleteQuestion  (request, pk):
-    pdfs = QuestionPaper.objects.all()
+    pdf = QuestionPaper.objects.get(id = pk)
     if request.method  == 'POST':
         pdf.delete()
         print("delete successful")
         return redirect('viewQuestions')
-    context = {'pdfs' : pdfs}
+    context = {'pdf' : pdf}
     return render(request , 'base1/delete.html', context)
 
 #resources:'(

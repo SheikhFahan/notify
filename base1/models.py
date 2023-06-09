@@ -74,10 +74,13 @@ class Note(models.Model):
     ideal_index = models.IntegerField(null = True, blank = True)
     # says when should this be studied ideally
     upload_date = models.DateField(null = True, blank = True,  auto_now=False, auto_now_add=True)
-    note = models.FileField(null = True, upload_to='pdf/notes/', max_length=100, verbose_name = 'Pdf')
+    note = models.FileField(null = True, upload_to='pdf/notes/', max_length=100, verbose_name = 'Pdf', blank= True)
 
     def prof_name(self):
         return str(self.prof)
+
+    # def get_note(self):
+    #     return self.note
 
     def __str__(self):
         return self.name

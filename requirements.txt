@@ -21,6 +21,7 @@ tabula-py==2.5.1
 whitenoise==6.4.0
 djangorestframework
 djangorestframework-simplejwt
+djangorestframework-simplejwt
 pyyaml
 requests
 django-cors-headers

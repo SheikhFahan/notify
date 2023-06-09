@@ -28,6 +28,9 @@ urlpatterns = [
     path("view_assignments/", views.viewAssignments, name = "viewAssignments"),
     path("views_questions/", views.viewQuestions, name = "viewQuestions"),
 
+    path("<int:pk>/", views.NoteDetailAPIView.as_view()), 
+    path("create/", views.NoteCreateAPIView.as_view()),
+
     path("resc/<str:pk>/", views.pdfSearch, name = 'customPdf'),
 
     re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),

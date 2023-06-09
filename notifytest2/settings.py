@@ -21,10 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ag-iz@j-m$$o#*m12ag^(wyuzl%b2=(@^%ewea7i%94b#(mc=w')
+SECRET_KEY = "jx!!=p9=%3^h+wz9m$&1%lunaavbe8z7=&!iauik(0nh+xnb)2"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.environ.get('DEBUG')) == '1'
+# DEBUG = str(os.environ.get('DEBUG')) == '1'
+DEBUG = True
 
 ALLOWED_HOSTS = ['notify-production.up.railway.app', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://notify-production.up.railway.app','http://127.0.0.1:8000/']

@@ -6,6 +6,7 @@ from .models import Note
 
 class NoteSerializer(serializers.ModelSerializer):
     prof_name = serializers.SerializerMethodField(read_only = True)
+    # note = serializers.SerializerMethodField(read_only = True)
     class Meta:
         model = Note
         fields = [
@@ -14,9 +15,15 @@ class NoteSerializer(serializers.ModelSerializer):
             'sub_code',
             'ideal_index',
             'upload_date',
-            'note'
+            'note',
         ]
     
+    # def get_note(self, obj):
+    #     if not hasattr(obj, 'id'):
+    #         return None
+    #     if not isinstance(obj ,Note):
+    #         return None
+    #     return obj.get_note()
     
     def get_prof_name(self, obj):
         return obj.prof_name()  
